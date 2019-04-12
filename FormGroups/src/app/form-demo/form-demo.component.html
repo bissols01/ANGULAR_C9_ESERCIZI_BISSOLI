@@ -41,11 +41,19 @@
    <div *ngIf="myForm.controls['sku'].hasError('required') || myForm.controls['price'].hasError('required') || myForm.controls['categoria'].hasError('required')"
          class="alert alert-danger">Something is required
    </div>
-   <button type="submit" class="btn btn-primary">Submit</button>
- </form>
 
+
+
+ </form>
+<div *ngIf="myForm.valid">
+<button type="submit" class="btn btn-primary">GO</button>
+</div>
  <div *ngIf="!myForm.valid"
- class="alert alert-danger">Form is invalid</div>
+ class="alert alert-danger">Form is invalid
+
+ </div>
+
+
 </div>
 
 
