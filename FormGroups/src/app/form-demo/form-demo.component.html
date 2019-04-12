@@ -1,0 +1,76 @@
+
+<div class="container">
+ <h2>Demo Form: Sku</h2>
+ <form [formGroup]="myForm"
+       (ngSubmit)="onSubmit(myForm.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="skuInput">SKU</label>
+     <input type="text"
+           id="skuInput"
+           placeholder=""
+           name="sku"
+           [formControl]="myForm.controls['sku']"
+           class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="priceInput">PREZZO</label>
+      <input type="text"
+           id="priceInput"
+           placeholder=""
+           name="price"
+           [formControl]="myForm.controls['price']"
+           class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="categoriaInput">CATEGORIA</label>
+      <input type="text"
+           id="categoriaInput"
+           placeholder=""
+           name="categoria"
+           [formControl]="myForm.controls['categoria']"
+           class="form-control">
+  </div>
+
+   <div *ngIf="!myForm.controls['sku'].valid"
+         class="alert alert-danger">Input is invalid
+   </div>
+   <div *ngIf="myForm.controls['sku'].hasError('required')"
+         class="alert alert-danger">Input is required
+   </div>
+
+   <div *ngIf="!myForm.controls['price'].valid"
+         class="alert alert-danger">Price is invalid
+   </div>
+   <div *ngIf="myForm.controls['price'].hasError('required')"
+         class="alert alert-danger">Price is required
+   </div>
+
+   <div *ngIf="!myForm.controls['categoria'].valid"
+         class="alert alert-danger">Categoria is invalid
+   </div>
+   <div *ngIf="myForm.controls['categoria'].hasError('required')"
+         class="alert alert-danger">Categoria is required
+   </div>
+
+
+
+
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+
+ <div *ngIf="!myForm.valid"
+ class="alert alert-danger">Form is invalid</div>
+</div>
+
+
+
+
+
+
+
+
+
