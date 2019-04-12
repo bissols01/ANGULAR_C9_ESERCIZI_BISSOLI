@@ -35,30 +35,12 @@
            class="form-control">
   </div>
 
-   <div *ngIf="!myForm.controls['sku'].valid"
-         class="alert alert-danger">Input is invalid
+   <div *ngIf="!myForm.controls['sku'].valid || !myForm.controls['price'].valid || !myForm.controls['categoria'].valid"
+         class="alert alert-danger">Something is invalid
    </div>
-   <div *ngIf="myForm.controls['sku'].hasError('required')"
-         class="alert alert-danger">Input is required
+   <div *ngIf="myForm.controls['sku'].hasError('required') || myForm.controls['price'].hasError('required') || myForm.controls['categoria'].hasError('required')"
+         class="alert alert-danger">Something is required
    </div>
-
-   <div *ngIf="!myForm.controls['price'].valid"
-         class="alert alert-danger">Price is invalid
-   </div>
-   <div *ngIf="myForm.controls['price'].hasError('required')"
-         class="alert alert-danger">Price is required
-   </div>
-
-   <div *ngIf="!myForm.controls['categoria'].valid"
-         class="alert alert-danger">Categoria is invalid
-   </div>
-   <div *ngIf="myForm.controls['categoria'].hasError('required')"
-         class="alert alert-danger">Categoria is required
-   </div>
-
-
-
-
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
 
